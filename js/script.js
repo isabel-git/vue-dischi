@@ -17,7 +17,7 @@ var app = new Vue({
       .then(risposta => {
 
         this.album = risposta.data.response;
-        console.log(risposta.data.response);
+        console.log(this.album);
       });
 
   }
