@@ -7,11 +7,8 @@ const apiMusic = "https://flynn.boolean.careers/exercises/api/array/music"
 var app = new Vue({
   el: '#app',
   data: {
-    selectDisk: "All",
-    album: [{
-
-    }]
-
+    selectedDisk: "All",
+    album: []
   },
   mounted: function () {
     axios.get(apiMusic)
@@ -25,11 +22,10 @@ var app = new Vue({
   methods: {
 
     ricerca: function (disk) { // filtro per genere
-      if (this.selectDisk === "All") {
+      if (this.selectedDisk === "All") {
         return this.album
       } else {
-        return disk.genre.includes(this.selectDisk);
-
+        return disk.genre.includes(this.selectedDisk);
       }
     }
   }
